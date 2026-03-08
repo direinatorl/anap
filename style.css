@@ -325,6 +325,19 @@ button:active {
     background: #000;
 }
 
+/* Mother's Celebration Screen (Evelyn) */
+#mother-celebration-screen {
+    background: radial-gradient(circle at center, #6a1b9a 0%, #000 100%);
+    /* Elegant purple gradient */
+}
+
+.mother-icon {
+    font-size: 100px;
+    margin-top: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
+}
+
 /* General Celebration Screen */
 #general-celebration-screen {
     background: linear-gradient(135deg, #4d1a24 0%, #000 100%);

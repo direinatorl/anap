@@ -49,13 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const generalCelebrationScreen = document.getElementById('general-celebration-screen');
+    const motherCelebrationScreen = document.getElementById('mother-celebration-screen');
 
     function isFeminine(name) {
         const n = name.toLowerCase().trim();
         if (!n) return false;
 
         // Specific feminine names provided as examples
-        const specificFeminine = ['lia', 'clara', 'anamaria', 'ana maria'];
+        const specificFeminine = ['lia', 'clara', 'anamaria', 'ana maria', 'evelyn'];
         if (specificFeminine.includes(n)) return true;
 
         // Common feminine endings in Portuguese
@@ -74,10 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     enterBtn.addEventListener('click', () => {
         const rawValue = nameInput.value.trim();
         const inputClean = rawValue.toLowerCase().replace(/\s/g, '');
-        const target = "anapaula";
 
-        if (inputClean === target) {
+        if (inputClean === "anapaula") {
             startCelebration();
+        } else if (inputClean === "evelyn") {
+            switchScreen(authScreen, motherCelebrationScreen);
         } else if (rawValue !== "") {
             if (isFeminine(rawValue)) {
                 switchScreen(authScreen, generalCelebrationScreen);
