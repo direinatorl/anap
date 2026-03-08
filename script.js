@@ -48,14 +48,40 @@ document.addEventListener('DOMContentLoaded', () => {
         switchScreen(authScreen, blackScreen);
     }
 
+    const generalCelebrationScreen = document.getElementById('general-celebration-screen');
+
+    function isFeminine(name) {
+        const n = name.toLowerCase().trim();
+        // Common feminine endings and some specific names
+        const feminineEndings = ['a', 'ia', 'is', 'ne', 'ce', 'iz', 'se', 'le', 'te'];
+        const commonFemaleNames = ['beatriz', 'isabel', 'raquel', 'nicole', 'ellen', 'ruth', 'ester', 'iris'];
+
+        const lastLetter = n.slice(-1);
+        const lastTwo = n.slice(-2);
+
+        return feminineEndings.includes(lastLetter) ||
+            feminineEndings.includes(lastTwo) ||
+            commonFemaleNames.includes(n);
+    }
+
     enterBtn.addEventListener('click', () => {
-        const input = nameInput.value.trim().toLowerCase().replace(/\s/g, '');
+        const rawValue = nameInput.value.trim();
+        const inputClean = rawValue.toLowerCase().replace(/\s/g, '');
         const target = "anapaula";
 
-        if (input === target) {
+        if (inputClean === target) {
             startCelebration();
-        } else if (input !== "") {
-            triggerBlackOut();
+        } else if (rawValue !== "") {
+            if (isFeminine(rawValue)) {
+                switchScreen(authScreen, generalCelebrationScreen);
+            } else {
+                triggerBlackOut();
+                setTimeout(() => {
+                    window.close();
+                    // Fallback if window.close() is blocked
+                    document.querySelector('.restricted-message').textContent = "Aba bloqueada. Fechamento não permitido pelo navegador.";
+                }, 1000);
+            }
         }
     });
 

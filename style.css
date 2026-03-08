@@ -325,6 +325,33 @@ button:active {
     background: #000;
 }
 
+/* General Celebration Screen */
+#general-celebration-screen {
+    background: linear-gradient(135deg, #4d1a24 0%, #000 100%);
+}
+
+.simple-wish {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.flower-icon {
+    font-size: 80px;
+    margin-top: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Restricted message */
+.restricted-message {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
 /* Animations */
 .fade-in {
     animation: fadeIn 2s ease-in forwards;
