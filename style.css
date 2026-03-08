@@ -256,7 +256,7 @@ button:active {
     position: absolute;
     font-size: 60px;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-    animation: floatCharacter 4s ease-in-out infinite;
+    opacity: 0;
 }
 
 .batman {
