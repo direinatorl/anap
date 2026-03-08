@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function switchScreen(from, to) {
         from.classList.remove('active');
         from.style.opacity = '0';
-        
+
         setTimeout(() => {
             from.style.display = 'none';
             to.style.display = 'flex';
@@ -20,24 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 800);
     }
 
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.innerHTML = '❤️';
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
-        heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-        
-        particlesContainer.appendChild(heart);
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        const types = ['❤️', '🌸', '🌹', '✨', '💐', '💖'];
+        particle.innerHTML = types[Math.floor(Math.random() * types.length)];
+
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.animationDuration = Math.random() * 3 + 4 + 's';
+        particle.style.fontSize = Math.random() * 20 + 15 + 'px';
+        particle.style.opacity = Math.random();
+
+        particlesContainer.appendChild(particle);
 
         setTimeout(() => {
-            heart.remove();
+            particle.remove();
         }, 7000);
     }
 
     function startCelebration() {
         switchScreen(authScreen, celebrationScreen);
-        setInterval(createHeart, 300);
+        setInterval(createParticle, 150);
     }
 
     function triggerBlackOut() {
@@ -46,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     enterBtn.addEventListener('click', () => {
         const name = nameInput.value.trim();
-        
+
         if (name === "Ana Paula") {
             startCelebration();
         } else if (name !== "") {
