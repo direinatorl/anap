@@ -257,24 +257,23 @@ button:active {
     font-size: 60px;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
     opacity: 0;
+    animation: floatCharacter 4s ease-in-out infinite 1.5s;
+    /* Starts floating after fade-in */
 }
 
 .batman {
     bottom: 15%;
     left: 10%;
-    animation-delay: 0s;
 }
 
 .chococat {
     bottom: 15%;
     right: 10%;
-    animation-delay: 1.5s;
 }
 
 .fluttershy {
     top: 20%;
     left: 15%;
-    animation-delay: 3s;
     font-size: 70px;
 }
 
