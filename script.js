@@ -49,11 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     enterBtn.addEventListener('click', () => {
-        const name = nameInput.value.trim();
+        const input = nameInput.value.trim().toLowerCase().replace(/\s/g, '');
+        const target = "anapaula";
 
-        if (name === "Ana Paula") {
+        if (input === target) {
             startCelebration();
-        } else if (name !== "") {
+        } else if (input !== "") {
             triggerBlackOut();
         }
     });
