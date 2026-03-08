@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         particle.style.left = Math.random() * 100 + 'vw';
         particle.style.animationDuration = Math.random() * 3 + 4 + 's';
-        particle.style.fontSize = Math.random() * 20 + 15 + 'px';
-        particle.style.opacity = Math.random();
+        particle.style.fontSize = Math.random() * 40 + 30 + 'px';
+        particle.style.opacity = Math.random() * 0.5 + 0.5;
 
         particlesContainer.appendChild(particle);
 
