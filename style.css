@@ -342,6 +342,17 @@ button:active {
     animation: pulse 2s ease-in-out infinite;
 }
 
+.message-body {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.message-body p {
+    margin-bottom: 0.8rem;
+}
+
 /* Restricted message */
 .restricted-message {
     color: white;

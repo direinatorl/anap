@@ -52,9 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function isFeminine(name) {
         const n = name.toLowerCase().trim();
-        // Common feminine endings and some specific names
-        const feminineEndings = ['a', 'ia', 'is', 'ne', 'ce', 'iz', 'se', 'le', 'te'];
-        const commonFemaleNames = ['beatriz', 'isabel', 'raquel', 'nicole', 'ellen', 'ruth', 'ester', 'iris'];
+        if (!n) return false;
+
+        // Specific feminine names provided as examples
+        const specificFeminine = ['lia', 'clara', 'anamaria', 'ana maria'];
+        if (specificFeminine.includes(n)) return true;
+
+        // Common feminine endings in Portuguese
+        const feminineEndings = ['a', 'ia', 'is', 'ne', 'ce', 'iz', 'se', 'le', 'te', 'ra'];
+        // Names that end in 'a' are 99% feminine in PT
+        const commonFemaleNames = ['beatriz', 'isabel', 'raquel', 'nicole', 'ellen', 'ruth', 'ester', 'iris', 'yasmin', 'vivian'];
 
         const lastLetter = n.slice(-1);
         const lastTwo = n.slice(-2);
