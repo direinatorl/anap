@@ -207,6 +207,85 @@ button:active {
     font-size: 1.8rem;
 }
 
+/* Corner Text */
+.corner {
+    position: absolute;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary-romantic);
+    opacity: 0.7;
+    z-index: 20;
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Characters */
+.character-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.character {
+    position: absolute;
+    font-size: 60px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    animation: floatCharacter 4s ease-in-out infinite;
+}
+
+.batman {
+    bottom: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.chococat {
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 1.5s;
+}
+
+.fluttershy {
+    top: 20%;
+    left: 15%;
+    animation-delay: 3s;
+    font-size: 70px;
+}
+
+@keyframes floatCharacter {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
 /* Particles/Hearts/Flowers */
 .particle {
     position: absolute;
